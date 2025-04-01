@@ -19,6 +19,7 @@ import java.util.List;
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder> {
 
     private List<School> schools;
+    private OnSchoolClickListener listener;
 
     public SchoolAdapter(List<School> schools) {
         this.schools = schools;
@@ -49,13 +50,36 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
         holder.viewBackground.setBackgroundColor(color);
         
         // 设置图标
-        holder.imageViewSchoolIcon.setImageResource(school.getIconResId());
+        if (school.getName().contains("Melbourne")) {
+            holder.imageViewSchoolIcon.setImageResource(R.drawable.ic_school_building);
+        } else if (school.getName().contains("Imperial")) {
+            holder.imageViewSchoolIcon.setImageResource(R.drawable.ic_globe);
+        } else {
+            holder.imageViewSchoolIcon.setImageResource(school.getIconResId());
+        }
         holder.imageViewSchoolIcon.setImageTintList(ColorStateList.valueOf(ContextCompat.getColor(holder.itemView.getContext(), R.color.white)));
+        
+        // 设置点击事件
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onSchoolClick(school, position);
+            }
+        });
+        
+        holder.imageViewMore.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onMoreClick(school, v);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return schools.size();
+    }
+    
+    public void setOnSchoolClickListener(OnSchoolClickListener listener) {
+        this.listener = listener;
     }
 
     public static class SchoolViewHolder extends RecyclerView.ViewHolder {
@@ -75,5 +99,10 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
             imageViewSchoolIcon = itemView.findViewById(R.id.imageViewSchoolIcon);
             imageViewMore = itemView.findViewById(R.id.imageViewMore);
         }
+    }
+    
+    public interface OnSchoolClickListener {
+        void onSchoolClick(School school, int position);
+        void onMoreClick(School school, View view);
     }
 } 
