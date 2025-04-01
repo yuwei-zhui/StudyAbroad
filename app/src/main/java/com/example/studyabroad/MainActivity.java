@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
         // Set default fragment (Home)
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
-            binding.bottomNavigation.setSelectedItemId(R.id.navigation_home);
+            binding.bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         }
     }
     
     private void setupBottomNavigation() {
-        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
             
             int itemId = item.getItemId();

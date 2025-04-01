@@ -35,20 +35,24 @@ public class DreamSchoolsAdapter extends RecyclerView.Adapter<DreamSchoolsAdapte
         University university = universities.get(position);
         
         // Set university details
-        holder.textViewUniversityName.setText(university.getName());
+        holder.textViewSchoolName.setText(university.getName());
         holder.textViewLocation.setText(university.getCity() + ", " + university.getCountry());
         holder.textViewRanking.setText("QS: " + university.getQsRanking());
         
         // Set background color based on university (for demo purposes)
+        int color;
         if (university.getName().contains("Melbourne")) {
-            holder.cardView.setCardBackgroundColor(holder.itemView.getContext().getResources().getColor(R.color.melbourne_card, null));
+            color = holder.itemView.getContext().getResources().getColor(R.color.orange_primary, null);
         } else if (university.getName().contains("Imperial")) {
-            holder.cardView.setCardBackgroundColor(holder.itemView.getContext().getResources().getColor(R.color.imperial_card, null));
+            color = holder.itemView.getContext().getResources().getColor(R.color.blue_primary, null);
         } else if (university.getName().contains("Hongkong")) {
-            holder.cardView.setCardBackgroundColor(holder.itemView.getContext().getResources().getColor(R.color.hongkong_card, null));
+            color = holder.itemView.getContext().getResources().getColor(R.color.light_orange, null);
         } else if (university.getName().contains("Sydney")) {
-            holder.cardView.setCardBackgroundColor(holder.itemView.getContext().getResources().getColor(R.color.sydney_card, null));
+            color = holder.itemView.getContext().getResources().getColor(R.color.colorPrimary, null);
+        } else {
+            color = holder.itemView.getContext().getResources().getColor(R.color.colorPrimary, null);
         }
+        holder.viewBackground.setBackgroundColor(color);
         
         // Set click listener
         holder.itemView.setOnClickListener(v -> {
@@ -58,7 +62,7 @@ public class DreamSchoolsAdapter extends RecyclerView.Adapter<DreamSchoolsAdapte
         });
         
         // Set options click listener
-        holder.imageViewOptions.setOnClickListener(v -> {
+        holder.imageViewMore.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onOptionsClick(university, v);
             }
@@ -80,21 +84,21 @@ public class DreamSchoolsAdapter extends RecyclerView.Adapter<DreamSchoolsAdapte
     }
     
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final CardView cardView;
-        private final TextView textViewUniversityName;
+        private final View viewBackground;
+        private final TextView textViewSchoolName;
         private final TextView textViewLocation;
         private final TextView textViewRanking;
-        private final ImageView imageViewUniversityLogo;
-        private final ImageView imageViewOptions;
+        private final ImageView imageViewSchoolIcon;
+        private final ImageView imageViewMore;
         
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = (CardView) itemView;
-            textViewUniversityName = itemView.findViewById(R.id.textViewUniversityName);
+            viewBackground = itemView.findViewById(R.id.viewBackground);
+            textViewSchoolName = itemView.findViewById(R.id.textViewSchoolName);
             textViewLocation = itemView.findViewById(R.id.textViewLocation);
             textViewRanking = itemView.findViewById(R.id.textViewRanking);
-            imageViewUniversityLogo = itemView.findViewById(R.id.imageViewUniversityLogo);
-            imageViewOptions = itemView.findViewById(R.id.imageViewOptions);
+            imageViewSchoolIcon = itemView.findViewById(R.id.imageViewSchoolIcon);
+            imageViewMore = itemView.findViewById(R.id.imageViewMore);
         }
     }
     
