@@ -4,17 +4,19 @@
     <color name="white">#FFFFFFFF</color>
     
     <!-- App color scheme -->
-    <color name="colorPrimary">#9370DB</color>     <!-- Medium Purple -->
-    <color name="colorPrimaryDark">#5E35B1</color> <!-- Deep Purple -->
-    <color name="colorAccent">#FFCC00</color>      <!-- Gold -->
+    <color name="colorPrimary">#673AB7</color>     <!-- Medium Purple -->
+    <color name="colorPrimaryDark">#512DA8</color> <!-- Deep Purple -->
+    <color name="colorAccent">#9C27B0</color>      <!-- Gold -->
     <color name="colorSecondary">#673AB7</color>   <!-- Purple -->
     
     <!-- Backgrounds -->
-    <color name="cream_background">#FFF9F0</color>
-    <color name="light_purple_background">#F5F0FF</color>
+    <color name="cream_background">#FFF8E1</color>
+    <color name="light_purple_background">#F4F0FF</color>
+    <color name="light_cream_background">#FFFAF5</color>
+    <color name="white_background">#FFFFFF</color>
     
     <!-- Text colors -->
-    <color name="text_primary">#333333</color>
+    <color name="text_primary">#212121</color>
     <color name="text_secondary">#757575</color>
     <color name="text_hint">#BDBDBD</color>
     
@@ -29,4 +31,11 @@
     <color name="warning_amber">#FFC107</color>
     <color name="error_red">#F44336</color>
     <color name="info_blue">#2196F3</color>
+    
+    <!-- New colors -->
+    <color name="transparent_yellow">#33FFD180</color>
+    <color name="light_orange">#FFCC80</color>
+    <color name="light_green">#81C784</color>
+    <color name="orange_primary">#FF7043</color>
+    <color name="blue_primary">#5C6BC0</color>
 </resources>

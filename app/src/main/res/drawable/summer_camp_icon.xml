@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- Sky -->
+    <path
+        android:fillColor="#A5D6A7"
+        android:pathData="M0,0h120v40h-120z" />
+    
+    <!-- Sun -->
+    <path
+        android:fillColor="#FFEB3B"
+        android:pathData="M20,20m-12,0a12,12 0,1 1,24 0a12,12 0,1 1,-24 0" />
+    
+    <!-- Mountain -->
+    <path
+        android:fillColor="#263238"
+        android:pathData="M0,120l50,-80l50,80z" />
+    
+    <!-- Snow cap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,40l-5,8l10,0z" />
+    
+    <!-- Climber -->
+    <path
+        android:fillColor="#FF7043"
+        android:pathData="M50,80m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0" />
+    
+    <!-- Climbing rope -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M50,72l-20,-30" />
+    
+    <!-- Flag -->
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M70,60l-10,0l0,-10z" />
+    <path
+        android:strokeColor="#F44336"
+        android:strokeWidth="2"
+        android:pathData="M60,60l0,-20" />
+    
+</vector> 
