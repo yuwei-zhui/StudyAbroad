@@ -12,6 +12,9 @@ import com.example.studyabroad.database.entity.User;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 public class UserRepository {
     
@@ -26,12 +29,25 @@ public class UserRepository {
         executorService = Executors.newSingleThreadExecutor();
     }
     
-    public long insert(User user) {
-        final long[] id = {-1};
+    public interface InsertCallback {
+        void onUserInserted(long userId);
+    }
+    
+    public void insertAsync(User user, InsertCallback callback) {
         executorService.execute(() -> {
-            id[0] = userDao.insert(user);
+            long id = userDao.insert(user);
+            callback.onUserInserted(id);
         });
-        return id[0];
+    }
+    
+    public long insert(User user) {
+        try {
+            Future<Long> future = executorService.submit(() -> userDao.insert(user));
+            return future.get(); // This will block until the result is available
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
     
     public void update(User user) {

@@ -3,6 +3,7 @@ package com.example.studyabroad.ui.auth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ import com.example.studyabroad.util.SessionManager;
 import com.example.studyabroad.viewmodel.UserViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    private static final String TAG = "RegisterActivity";
 
     private EditText editTextName;
     private EditText editTextEmail;
@@ -125,23 +128,32 @@ public class RegisterActivity extends AppCompatActivity {
                         } else {
                             // Proceed with registration
                             User newUser = new User(name, email, password);
-                            long userId = userViewModel.insert(newUser);
                             
-                            if (userId > 0) {
-                                // Set the generated ID
-                                newUser.setId(userId);
+                            try {
+                                // Use the improved repository method that properly waits for the DB operation
+                                long userId = userViewModel.insert(newUser);
+                                Log.d(TAG, "User registration - generated ID: " + userId);
                                 
-                                // Create login session
-                                sessionManager.createLoginSession(newUser);
-                                
-                                // Navigate to main activity
-                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                // Registration failed
-                                Toast.makeText(RegisterActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                if (userId > 0) {
+                                    // Set the generated ID
+                                    newUser.setId(userId);
+                                    
+                                    // Create login session
+                                    sessionManager.createLoginSession(newUser);
+                                    
+                                    // Navigate to main activity
+                                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    // Registration failed
+                                    Log.e(TAG, "User registration failed - invalid ID returned: " + userId);
+                                    Toast.makeText(RegisterActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e) {
+                                Log.e(TAG, "Exception during user registration: " + e.getMessage(), e);
+                                Toast.makeText(RegisterActivity.this, "Registration error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
