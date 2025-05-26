@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Country options for filter -->
+    <string-array name="countries">
+        <item>All Countries</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Belgium</item>
+        <item>Brazil</item>
+        <item>Canada</item>
+        <item>China</item>
+        <item>Czech Republic</item>
+        <item>Denmark</item>
+        <item>Finland</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Hong Kong</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Japan</item>
+        <item>Malaysia</item>
+        <item>Mexico</item>
+        <item>Netherlands</item>
+        <item>New Zealand</item>
+        <item>Norway</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Russia</item>
+        <item>Singapore</item>
+        <item>South Africa</item>
+        <item>South Korea</item>
+        <item>Spain</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Taiwan</item>
+        <item>Thailand</item>
+        <item>Turkey</item>
+        <item>United Arab Emirates</item>
+        <item>United Kingdom</item>
+        <item>United States</item>
+    </string-array>
+    
+    <!-- Program categories -->
+    <string-array name="program_categories">
+        <item>Accounting</item>
+        <item>Agriculture</item>
+        <item>Anthropology</item>
+        <item>Architecture</item>
+        <item>Art and Design</item>
+        <item>Biology</item>
+        <item>Business Administration</item>
+        <item>Chemistry</item>
+        <item>Computer Science</item>
+        <item>Criminal Justice</item>
+        <item>Data Science</item>
+        <item>Economics</item>
+        <item>Education</item>
+        <item>Engineering</item>
+        <item>English Literature</item>
+        <item>Environmental Science</item>
+        <item>Finance</item>
+        <item>Geography</item>
+        <item>Health Sciences</item>
+        <item>History</item>
+        <item>Information Technology</item>
+        <item>International Relations</item>
+        <item>Journalism</item>
+        <item>Kinesiology</item>
+        <item>Law</item>
+        <item>Linguistics</item>
+        <item>Marketing</item>
+        <item>Mathematics</item>
+        <item>Medicine</item>
+        <item>Music</item>
+        <item>Nursing</item>
+        <item>Philosophy</item>
+        <item>Physics</item>
+        <item>Political Science</item>
+        <item>Psychology</item>
+        <item>Public Health</item>
+        <item>Social Work</item>
+        <item>Sociology</item>
+        <item>Statistics</item>
+        <item>Theater Arts</item>
+        <item>Urban Planning</item>
+        <item>Veterinary Medicine</item>
+        <item>Zoology</item>
+    </string-array>
+    
+    <!-- Degree levels -->
+    <string-array name="degree_levels">
+        <item>Bachelor</item>
+        <item>Master</item>
+        <item>PhD</item>
+    </string-array>
+    
+    <!-- Default tuition range (min, max) for slider -->
+    <array name="tuition_range_default">
+        <item>0</item>
+        <item>50000</item>
+    </array>
+    
+    <!-- Popular destination countries -->
+    <string-array name="popular_destinations">
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Australia</item>
+        <item>Canada</item>
+        <item>Germany</item>
+        <item>France</item>
+        <item>Japan</item>
+        <item>Singapore</item>
+    </string-array>
+
+    <!-- Target Degree Level Options -->
+    <string-array name="target_degree_levels">
+        <item>Bachelor</item>
+        <item>Master</item>
+        <item>PhD</item>
+        <item>Certificate</item>
+        <item>Diploma</item>
+    </string-array>
+
+    <!-- QS Ranking Range Options -->
+    <string-array name="qs_ranking_ranges">
+        <item>1-30</item>
+        <item>31-50</item>
+        <item>51-100</item>
+        <item>101-200</item>
+        <item>201-300</item>
+        <item>301-500</item>
+        <item>500+</item>
+        <item>No preference</item>
+    </string-array>
+
+    <!-- Preferred Countries Options -->
+    <string-array name="preferred_countries">
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Australia</item>
+        <item>Canada</item>
+        <item>Germany</item>
+        <item>France</item>
+        <item>Netherlands</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>Switzerland</item>
+        <item>Sweden</item>
+        <item>Norway</item>
+        <item>Denmark</item>
+        <item>Japan</item>
+        <item>South Korea</item>
+        <item>Ireland</item>
+        <item>Belgium</item>
+        <item>Austria</item>
+        <item>Italy</item>
+        <item>Spain</item>
+    </string-array>
+</resources> 

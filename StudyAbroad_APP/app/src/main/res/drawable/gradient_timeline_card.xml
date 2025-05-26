@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Different gradients for variety -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#FF9A8B"
+                android:endColor="#A8E6CF"
+                android:angle="135"
+                android:type="linear" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+</selector> 

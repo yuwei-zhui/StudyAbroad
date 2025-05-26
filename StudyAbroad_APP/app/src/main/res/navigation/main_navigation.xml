@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.studyabroad.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_schoolDetailActivity"
+            app:destination="@id/schoolDetailActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.studyabroad.fragments.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/timelineFragment"
+        android:name="com.example.studyabroad.fragments.TimelineFragment"
+        android:label="Timeline"
+        tools:layout="@layout/fragment_timeline">
+        <action
+            android:id="@+id/action_timelineFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.studyabroad.fragments.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.studyabroad.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_academicProfileFragment"
+            app:destination="@id/academicProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_personalInfoEditFragment"
+            app:destination="@id/personalInfoEditFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/academicProfileFragment"
+        android:name="com.example.studyabroad.fragments.AcademicProfileFragment"
+        android:label="Academic Profile"
+        tools:layout="@layout/fragment_academic_profile" />
+
+    <fragment
+        android:id="@+id/personalInfoEditFragment"
+        android:name="com.example.studyabroad.fragments.PersonalInfoEditFragment"
+        android:label="Edit Personal Info"
+        tools:layout="@layout/fragment_personal_info_edit" />
+
+
+
+    <activity
+        android:id="@+id/schoolDetailActivity"
+        android:name="com.example.studyabroad.activities.SchoolDetailActivity"
+        android:label="School Detail"
+        tools:layout="@layout/activity_school_detail" />
+
+</navigation> 
